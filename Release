@@ -1,0 +1,7 @@
+Origin: Jamierepo
+Label: Jamierepo
+Suite: stable
+Codename: stable
+Architectures: iphoneos-arm iphoneos-arm64
+Components: main
+Description: Local APT repository
