@@ -1,3 +1,38 @@
+Package: com.carloztech.appstoreplusplus
+Version: 0.9.5
+Architecture: iphoneos-arm
+Maintainer: CarlozTech <tutorialeselmago@gmail.com>
+Filename: pool/main/AppStore++.deb
+Size: 1638498
+MD5sum: 69cc0e7ec58653923dc770689d3bc0a9
+SHA1: 14c99b27e8f0f394e82710c399bb3cba57c4a42a
+SHA256: 67754f54fe92a46d5a592c0468292330317e74274fe0f4547d2f967c1f53c349
+Section: Tweaks
+Homepage: http://CarlozTech.github.io/
+Description: Allows you to downgrade/upgrade apps in the AppStore
+Author: CokePokes
+Name: AppStore++
+Sponsor: http://www.youtube.com/c/CarlozTech
+
+Package: com.f0u4d.stalky
+Version: 4.2.9
+Architecture: iphoneos-arm64
+Maintainer: Fouad Raheb <support@fouadraheb.com>
+Installed-Size: 2428
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000), com.f0u4d.watusitools (>= 2.7.1)
+Enhances: WhatsApp
+Conflicts: com.f0u4d.watusitools (<= 2.7.0)
+Filename: pool/main/com.f0u4d.stalky_4.2.9_iphoneos-arm64.deb
+Size: 667304
+MD5sum: 935437e7a1785319cbd8727d8c30cab1
+SHA1: 00bf229f984af8c01145ffed1898541681eb422e
+SHA256: 5c83080ed88830285e6ee6afef42aaf4f6caf2378de89080602adb005a02f87e
+Section: Tweaks
+Description: Track & download your contacts latest profile & statuses updates on WhatsApp
+Author: Fouad Raheb <support@fouadraheb.com>
+Depiction: https://apt.fouadraheb.com/package/com.f0u4d.stalky
+Name: Stalky
+
 Package: com.julioverne.adblock
 Version: 0.2~beta1
 Architecture: iphoneos-arm
@@ -1964,6 +1999,56 @@ Author: julioverne
 Depiction: https://julioverne.github.io/description.html?id=com.julioverne.zaddyverifyroll
 Name: ZaddyVerifyRoll
 
+Package: com.level3tjg.bfdecrypt
+Version: 1.3.5
+Architecture: iphoneos-arm64
+Maintainer: level3tjg
+Installed-Size: 388
+Depends: mobilesubstrate, com.opa334.altlist, firmware (>=11.0)
+Filename: pool/main/com.level3tjg.bfdecrypt_1.3.5_iphoneos-arm64.deb
+Size: 69340
+MD5sum: 15b548539f4808dd9793c8df93e720ef
+SHA1: a9c51d13bd0b666ab6cf66bda98c8c402d393cf1
+SHA256: 20c7d988a475b6bff1a2f915c77a737e9bff02ca7993c7b354d7e674a6ffdcf5
+Section: Tweaks
+Description: bfdecrypt for iOS 11+
+Author: BishopFox
+Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.bfdecrypt
+Name: bfdecrypt
+
+Package: com.opa334.choicy
+Version: 1.5.3-2
+Architecture: iphoneos-arm64
+Maintainer: opa334 <opa334@protonmail.com>
+Installed-Size: 1136
+Depends: mobilesubstrate, com.opa334.altlist (>=1.0.4), preferenceloader
+Filename: pool/main/com.opa334.choicy_1.5.3-2_iphoneos-arm64.deb
+Size: 161766
+MD5sum: 198ec8c26c632d83b25d36f4563dfc36
+SHA1: af4d88e9344709fc28d26b3c01e4a89360802e2e
+SHA256: e427d3756261b89f4986fcbe42664168367ab78110cd326c545027a3c7de0df5
+Section: Tweaks
+Description: Advanced Tweak Configuration!
+Author: opa334 <opa334@protonmail.com>
+Depiction: https://opa334.github.io/depic/Choicy/index.html
+Name: Choicy
+
+Package: com.tigisoftware.appdatamanager
+Version: 1.8.2-4
+Architecture: iphoneos-arm64
+Maintainer: TIGI Software
+Installed-Size: 5236
+Recommends: ldid
+Filename: pool/main/com.tigisoftware.appdatamanager_1.8.2-4_iphoneos-arm64.deb
+Size: 1900552
+MD5sum: 83d681d4b17b81059c5ee4682dd9a0a0
+SHA1: dd86ddeae5f0d40d0ba2380c333a62b40e8c6e99
+SHA256: b321ddaf6d03e2f2710c9f8f9a6a6d617e3c6db2abf46cced44ddbe82629ee50
+Section: Utilities
+Description: This tool provides the way to WIPE, BACKUP, RESTORE AppData for installed Apps
+Author: TIGI Software
+Name: Apps Manager
+
 Package: dev.mineek.appstoretroller
 Version: 0.0.1
 Architecture: iphoneos-arm64
@@ -1979,4 +2064,44 @@ Section: Tweaks
 Description: An awesome MobileSubstrate tweak!
 Author: Mineek
 Name: appstoretroller
+
+Package: me.jjolano.shadow
+Version: 3.7.6
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1076
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: pool/main/me.jjolano.shadow_3.7.6_iphoneos-arm64.deb
+Size: 100938
+MD5sum: d5d9e73e6fb80918eb95772361f123be
+SHA1: 22c6e9db9a75db1b4faff4292b7343d699e2de86
+SHA256: 52fdf82c814ab67700a51a13de0ca2138b5942b8b2e949493e04614aeef523d4
+Section: System
+Description: A modern jailbreak detection bypass.
+Author: jjolano
+Name: Shadow
+
+Package: re.frida.server
+Version: 17.8.2
+Architecture: iphoneos-arm
+Maintainer: Ole André Vadla Ravnås <oleavr@nowsecure.com>
+Installed-Size: 52452
+Conflicts: re.frida.server64
+Filename: pool/main/re.frida.server_17.8.2_iphoneos-arm.deb
+Size: 15860408
+MD5sum: c1951519a1665b0c47eb8e91d82be374
+SHA1: ba522ec82aa1d6bbe144f1779b915db8f9d0553f
+SHA256: 2bb84cf755edf9425d3e4d6e2e9671a96d92669e66b6dec061601bc5ce9cafe4
+Section: Development
+Priority: optional
+Homepage: https://frida.re/
+Description: Observe and reprogram running programs.
+Author: Frida Developers <oleavr@nowsecure.com>
+Name: Frida
 
