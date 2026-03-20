@@ -15,34 +15,34 @@ jobs:
   build-repo:
     environment: gpg
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y dpkg-dev gnupg
-
+          
       - name: Import GPG private key
         run: |
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-
+          
       - name: Configure GPG
         run: |
           mkdir -p ~/.gnupg
           chmod 700 ~/.gnupg
           echo "use-agent" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
-
+          
       - name: Generate Packages index (ROOT)
         run: |
           dpkg-scanpackages pool /dev/null > Packages
           gzip -9c Packages > Packages.gz
-
+          
       - name: Sign Release file
         run: |
           # Clear-signed InRelease (preferred by apt)
