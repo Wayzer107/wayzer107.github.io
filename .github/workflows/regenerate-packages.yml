@@ -1,0 +1,80 @@
+name: Build APT Repository
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev gnupg
+
+      - name: Import GPG private key
+        run: |
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Configure GPG
+        run: |
+          mkdir -p ~/.gnupg
+          chmod 700 ~/.gnupg
+          echo "use-agent" >> ~/.gnupg/gpg.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+
+      - name: Generate Packages index (ROOT)
+        run: |
+          dpkg-scanpackages pool /dev/null > Packages
+          gzip -9c Packages > Packages.gz
+
+      - name: Create Release file (ROOT)
+        run: |
+          cat > Release <<EOF
+Origin: LocalRepo
+Label: LocalRepo
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Local APT repository
+EOF
+
+      - name: Sign Release file
+        run: |
+          # Clear-signed InRelease (preferred by apt)
+          gpg --batch --yes \
+              --pinentry-mode loopback \
+              --passphrase "$GPG_PASSPHRASE" \
+              --default-key "$GPG_KEY_ID" \
+              --clearsign -o InRelease Release
+
+          # Detached signature
+          gpg --batch --yes \
+              --pinentry-mode loopback \
+              --passphrase "$GPG_PASSPHRASE" \
+              --default-key "$GPG_KEY_ID" \
+              -abs -o Release.gpg Release
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+
+      - name: Upload repository artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apt-repo
+          path: |
+            pool/
+            Packages
+            Packages.gz
+            Release
+            InRelease
+            Release.gpg
