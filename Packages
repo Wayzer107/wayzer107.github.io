@@ -2016,6 +2016,24 @@ Author: BishopFox
 Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.bfdecrypt
 Name: bfdecrypt
 
+Package: com.nightwind.rootless-patcher
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Maintainer: Nightwind
+Installed-Size: 116
+Depends: odcctools, ldid
+Filename: pool/main/com.nightwind.rootless-patcher_0.0.1_iphoneos-arm64.deb
+Size: 23914
+MD5sum: 6e6ecca9bd8d6f6518c2b1cde85ed640
+SHA1: 8a09a5a62c0c9599ce517d3e20fc02be7a374886
+SHA256: 014204c7a1505739e2f84c2f70df04001956859b11dbf88fc64e009674a5b7bd
+Section: System
+Description: A CLI rootful to rootless patcher.
+ Utilizes a technique that does not require Xina-style symlinks.
+Tag: role::hacker
+Author: Nightwind and staturnz
+Name: rootless-patcher
+
 Package: com.opa334.choicy
 Version: 1.5.3-2
 Architecture: iphoneos-arm64
