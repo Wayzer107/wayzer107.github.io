@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Jamierepo
+Label: Jamierepo
+Suite: stable
+Codename: stable
+Architectures: iphoneos-arm iphoneos-arm64
+Components: main
+Description: Local APT repository
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQkfysAncyR7S7ywlGjesmiFFt8fQUCab0+hgAKCRCjesmiFFt8
+fbhEAQCNoh/7I6t8vIbpNx9lwpZRiMH20EdcvDvdpMrVpwnOGgEAo93t3sM8xpep
+JWzmlaAy9hv74WX/sDGkMfZw4CzygAY=
+=YRZv
+-----END PGP SIGNATURE-----
