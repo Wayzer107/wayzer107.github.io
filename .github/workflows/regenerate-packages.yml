@@ -52,7 +52,6 @@ Codename: stable
 Architectures: amd64
 Components: main
 Description: Local APT repository
-EOF
 
       - name: Sign Release file
         run: |
