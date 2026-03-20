@@ -42,17 +42,6 @@ jobs:
           dpkg-scanpackages pool /dev/null > Packages
           gzip -9c Packages > Packages.gz
 
-      - name: Create Release file (ROOT)
-        run: |
-          cat > Release <<EOF
-Origin: LocalRepo
-Label: LocalRepo
-Suite: stable
-Codename: stable
-Architectures: amd64
-Components: main
-Description: Local APT repository
-
       - name: Sign Release file
         run: |
           # Clear-signed InRelease (preferred by apt)
